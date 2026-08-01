@@ -5,49 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baseer Ladies Collection</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
-        header { background-color: #721c24; color: white; text-align: center; padding: 2rem 1rem; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin-top: 0.5rem; font-style: italic; }
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
-        .card h3 { color: #721c24; margin-top: 0; }
-        .price { font-size: 1.25rem; font-weight: bold; color: #28a745; margin: 0.5rem 0; }
-        .btn { display: inline-block; background-color: #25D366; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; }
-        footer { text-align: center; padding: 2rem; background: #333; color: white; margin-top: 3rem; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #fdfbfb; color: #2d3436; overflow-x: hidden; }
+
+        /* Animated Header */
+        header { 
+            background: linear-gradient(135deg, #721c24, #b02a37); 
+            color: white; 
+            text-align: center; 
+            padding: 3rem 1rem; 
+            animation: fadeInDown 1s ease-out;
+        }
+        header h1 { font-size: 2.8rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        header p { font-style: italic; opacity: 0.9; font-size: 1.1rem; }
+
+        .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
+        h2.section-title { text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #721c24; position: relative; }
+
+        /* Product Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+
+        /* Animated Hover Cards */
+        .card { 
+            background: white; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08); 
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 25px rgba(114, 28, 36, 0.2); 
+        }
+
+        /* Image Zoom Animation */
+        .img-container { width: 100%; height: 320px; overflow: hidden; background: #eee; }
+        .card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease; 
+        }
+        .card:hover img { transform: scale(1.08); }
+
+        .card-details { padding: 1.5rem; text-align: center; }
+        .card-details h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #111; }
+        .price { font-size: 1.3rem; font-weight: bold; color: #b02a37; margin: 0.8rem 0; }
+
+        /* Pulsing WhatsApp Button */
+        .btn-whatsapp { 
+            display: inline-block; 
+            background-color: #25D366; 
+            color: white; 
+            padding: 0.8rem 1.6rem; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            transition: background 0.3s ease, transform 0.2s ease;
+            animation: pulse 2s infinite;
+        }
+        .btn-whatsapp:hover { background-color: #1eb853; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 2rem; background: #111; color: white; margin-top: 4rem; }
+
+        /* Keyframe Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Baseer Ladies Collection</h1>
-        <p>A shade for every story — lawn to bridal finery</p>
+        <p>A shade for every story — everyday lawn to bridal finery</p>
     </header>
 
     <div class="container">
-        <h2>Featured Collections</h2>
+        <h2 class="section-title">Featured Arrivals</h2>
         <div class="grid">
+
+            <!-- PRODUCT 1 -->
             <div class="card">
-                <h3>3-Piece Printed Lawn Suit</h3>
-                <p>Premium summer lawn with digital print dupattta.</p>
-                <div class="price">PKR 3,500</div>
-                <a href="https://wa.me/?text=Hi%20Baseer%20Ladies%20Collection,%20I%20want%20to%20order%20the%20Lawn%20Suit" class="btn">Order on WhatsApp</a>
+                <div class="img-container">
+                    <!-- Replace dress1.jpg with your exact image file name -->
+                    <img src="dress1.jpg" alt="3-Piece Lawn Suit">
+                </div>
+                <div class="card-details">
+                    <h3>3-Piece Printed Lawn Suit</h3>
+                    <p>Premium digital printed summer fabric.</p>
+                    <div class="price">PKR 3,500</div>
+                    <!-- Replace 923001234567 with your WhatsApp number -->
+                    <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20the%20Printed%20Lawn%20Suit" class="btn-whatsapp">Order on WhatsApp</a>
+                </div>
             </div>
 
+            <!-- PRODUCT 2 -->
             <div class="card">
-                <h3>Embroidered Chiffon Dress</h3>
-                <p>Elegant heavy embroidery for party wear.</p>
-                <div class="price">PKR 6,800</div>
-                <a href="https://wa.me/?text=Hi%20Baseer%20Ladies%20Collection,%20I%20want%20to%20order%20the%20Chiffon%20Dress" class="btn">Order on WhatsApp</a>
+                <div class="img-container">
+                    <!-- Replace dress2.jpg with your exact image file name -->
+                    <img src="dress2.jpg" alt="Embroidered Chiffon">
+                </div>
+                <div class="card-details">
+                    <h3>Embroidered Chiffon Dress</h3>
+                    <p>Heavy sequence embroidery party wear.</p>
+                    <div class="price">PKR 6,800</div>
+                    <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20the%20Chiffon%20Dress" class="btn-whatsapp">Order on WhatsApp</a>
+                </div>
             </div>
 
+            <!-- PRODUCT 3 -->
             <div class="card">
-                <h3>Bridal Velvet Suit</h3>
-                <p>Rich velvet fabric with hand-embroidered work.</p>
-                <div class="price">PKR 12,500</div>
-                <a href="https://wa.me/?text=Hi%20Baseer%20Ladies%20Collection,%20I%20want%20to%20order%20the%20Velvet%20Suit" class="btn">Order on WhatsApp</a>
+                <div class="img-container">
+                    <!-- Replace dress3.jpg with your exact image file name -->
+                    <img src="dress3.jpg" alt="Bridal Velvet Suit">
+                </div>
+                <div class="card-details">
+                    <h3>Bridal Velvet Collection</h3>
+                    <p>Handcrafted velvet suit with rich dupatta.</p>
+                    <div class="price">PKR 12,500</div>
+                    <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20the%20Velvet%20Suit" class="btn-whatsapp">Order on WhatsApp</a>
+                </div>
             </div>
+
         </div>
     </div>
 
