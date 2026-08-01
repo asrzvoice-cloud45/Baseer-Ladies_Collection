@@ -13,201 +13,128 @@
 
         /* Announcement Bar */
         .top-bar { background: #ba4343; color: #fff; text-align: center; padding: 9px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px; }
-        .top-bar a { color: #fff; font-weight: 700; text-decoration: underline; margin-left: 5px; }
 
-        /* Header Navigation */
+        /* Navigation Header */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4%; border-bottom: 1px solid #f0f0f0; background: #fff; position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.8rem; font-weight: 700; color: #ba4343; letter-spacing: 1.5px; text-transform: uppercase; }
         .nav-menu { list-style: none; display: flex; gap: 2.2rem; }
-        .nav-menu a { text-decoration: none; color: #222; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
-        .nav-menu a.sale { color: #ba4343; font-weight: 700; }
-        .nav-menu a:hover { color: #ba4343; }
-        .nav-icons { display: flex; gap: 1.2rem; font-size: 1.1rem; color: #333; cursor: pointer; }
+        .nav-menu a { text-decoration: none; color: #222; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Full Width Banner */
-        .hero-banner { width: 100%; height: 75vh; position: relative; overflow: hidden; background: #f8f8f8; }
+        /* Hero Banner */
+        .hero-banner { width: 100%; height: 60vh; position: relative; overflow: hidden; background: #f8f8f8; }
         .hero-banner img { width: 100%; height: 100%; object-fit: cover; }
         .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 1rem; }
-        .hero-overlay h1 { font-size: 3.5rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .hero-overlay p { font-size: 1.2rem; font-weight: 400; margin-bottom: 1.5rem; letter-spacing: 1px; }
-        .btn-shop { background: #fff; color: #111; padding: 0.9rem 2.5rem; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; transition: 0.3s ease; }
-        .btn-shop:hover { background: #ba4343; color: #fff; }
+        .hero-overlay h1 { font-size: 3rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; }
 
         /* Section Container */
         .container { max-width: 1400px; margin: 4rem auto; padding: 0 2rem; }
         .section-title { text-align: center; margin-bottom: 2.5rem; }
-        .section-title h2 { font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
-        .section-title p { font-size: 0.95rem; color: #666; margin-top: 6px; }
+        .section-title h2 { font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* Khaadi Grid Layout */
+        /* Grid Layout */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 
-        /* Clothing Card Animation */
-        .product-card { background: #fff; border-radius: 0px; overflow: hidden; position: relative; transition: all 0.3s ease; }
-        .img-container { width: 100%; height: 420px; overflow: hidden; position: relative; background: #f5f5f5; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+        /* Product Cards */
+        .product-card { background: #fff; overflow: hidden; position: relative; transition: all 0.3s ease; border: 1px solid #eee; }
+        .img-container { width: 100%; height: 400px; overflow: hidden; position: relative; background: #f5f5f5; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .product-card:hover .img-container img { transform: scale(1.08); }
 
-        /* Sale Badge */
-        .badge-sale { position: absolute; bottom: 12px; left: 12px; background: #ba4343; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; text-transform: uppercase; letter-spacing: 0.5px; z-index: 2; }
-        .wishlist-icon { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.85); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; cursor: pointer; transition: 0.3s; z-index: 2; }
-        .wishlist-icon:hover { background: #ba4343; color: #fff; }
-
-        /* Card Content */
-        .product-info { padding: 1.2rem 0; }
+        .product-info { padding: 1.2rem; }
         .fabric-tag { font-size: 0.75rem; color: #777; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-        .product-title { font-size: 0.95rem; font-weight: 600; color: #111; margin-bottom: 8px; text-transform: capitalize; }
-        
-        /* Pricing */
-        .price-box { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
-        .old-price { text-decoration: line-through; color: #888; font-size: 0.9rem; font-weight: 500; }
-        .current-price { font-size: 1.05rem; font-weight: 700; color: #111; }
+        .product-title { font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 8px; }
+        .current-price { font-size: 1.1rem; font-weight: 700; color: #ba4343; margin-bottom: 1rem; display: block; }
 
-        /* Order Button */
+        /* WhatsApp Order Button */
         .btn-wa { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #111; color: #fff; padding: 0.85rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s ease; }
-        .btn-wa:hover { background: #25D366; color: #fff; }
+        .btn-wa:hover { background: #25D366; }
 
-        /* Feature Strip */
-        .feature-strip { background: #fafafa; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 2.5rem 1rem; margin-top: 5rem; }
-        .feature-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center; }
-        .feature-item i { font-size: 1.8rem; color: #ba4343; margin-bottom: 0.8rem; }
-        .feature-item h4 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-        .feature-item p { font-size: 0.8rem; color: #666; }
+        /* ADMIN CONTROL PANEL STYLES */
+        .admin-section { background: #f4f4f4; border: 2px dashed #ba4343; padding: 2.5rem; border-radius: 8px; margin: 4rem auto; max-width: 800px; }
+        .admin-section h3 { font-size: 1.4rem; color: #ba4343; margin-bottom: 0.5rem; text-align: center; text-transform: uppercase; }
+        .admin-section p { text-align: center; font-size: 0.85rem; color: #555; margin-bottom: 1.5rem; }
+
+        .admin-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .admin-form input, .admin-form select { padding: 0.8rem; border: 1px solid #ccc; font-size: 0.9rem; border-radius: 4px; width: 100%; }
+        .admin-form .full-width { grid-column: span 2; }
+
+        .btn-add-product { grid-column: span 2; background: #ba4343; color: white; padding: 1rem; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px; transition: 0.3s; }
+        .btn-add-product:hover { background: #111; }
 
         footer { background: #111; color: #fff; padding: 3rem 1rem; text-align: center; font-size: 0.85rem; }
-        footer h3 { letter-spacing: 2px; margin-bottom: 10px; }
-
-        @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .hero-overlay h1 { font-size: 2.2rem; }
-            .img-container { height: 350px; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Top Announcement Bar -->
-    <div class="top-bar">
-        SALE IS NOW LIVE AT UP TO 50% OFF. FREE SHIPPING ON ORDERS OVER PKR 5,000! <a href="#shop">SHOP NOW</a>
-    </div>
+    <div class="top-bar">FREE NATIONWIDE SHIPPING ON ORDERS OVER PKR 5,000</div>
 
-    <!-- Navigation Header -->
     <nav>
         <div class="logo">Baseer Collection</div>
         <ul class="nav-menu">
-            <li><a href="#shop" class="sale">SALE</a></li>
+            <li><a href="#shop">SALE</a></li>
             <li><a href="#shop">NEW IN</a></li>
             <li><a href="#shop">READY TO WEAR</a></li>
-            <li><a href="#shop">FABRICS</a></li>
         </ul>
-        <div class="nav-icons">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-bag-shopping"></i>
-        </div>
     </nav>
 
-    <!-- Main Hero Banner (Khaadi Style) -->
     <div class="hero-banner">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1400" alt="Summer Pastels Banner">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1400" alt="Banner">
         <div class="hero-overlay">
-            <h1>SUMMER PASTELS</h1>
-            <p>Explore our latest unstitched & stitched collections</p>
-            <a href="#shop" class="btn-shop">Explore Collection</a>
+            <h1>NEW ARRIVALS</h1>
+            <p>Shop Exclusive Women's Clothing</p>
         </div>
     </div>
 
-    <!-- Product Showcase Section -->
+    <!-- Product Showcase -->
     <div class="container" id="shop">
         <div class="section-title">
             <h2>Top Picks For You</h2>
             <p>Handpicked styles curated by Mr. Baseer Ahmed</p>
         </div>
 
-        <div class="product-grid">
-
-            <!-- DRESS 1 -->
+        <div class="product-grid" id="productGrid">
+            <!-- Sample Dress 1 -->
             <div class="product-card">
                 <div class="img-container">
-                    <div class="badge-sale">70% OFF</div>
-                    <div class="wishlist-icon"><i class="fa-regular fa-heart"></i></div>
-                    <!-- Put your image filename inside src="..." below -->
-                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800" alt="Co-ord Set">
+                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800" alt="Suit">
                 </div>
                 <div class="product-info">
-                    <div class="fabric-tag">Embroidered | Raw Silk</div>
-                    <div class="product-title">2 Piece Co-ord Set | Top and Bottom</div>
-                    <div class="price-box">
-                        <span class="old-price">PKR 20,000</span>
-                        <span class="current-price">PKR 6,000</span>
-                    </div>
-                    <a href="https://wa.me/92301300233?text=Hi%20Baseer%20Collection,%20I%20want%20to%20buy:%202%20Piece%20Co-ord%20Set%20(PKR%206,000)" target="_blank" class="btn-wa">
+                    <div class="fabric-tag">Embroidered | Lawn 3-Piece</div>
+                    <div class="product-title">Floral Printed Lawn Suit</div>
+                    <span class="current-price">PKR 4,500</span>
+                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Floral%20Printed%20Lawn%20Suit%20(PKR%204,500)" target="_blank" class="btn-wa">
                         <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
                     </a>
                 </div>
             </div>
-
-            <!-- DRESS 2 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <div class="badge-sale">50% OFF</div>
-                    <div class="wishlist-icon"><i class="fa-regular fa-heart"></i></div>
-                    <!-- Put your image filename inside src="..." below -->
-                    <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800" alt="3 Piece Suit">
-                </div>
-                <div class="product-info">
-                    <div class="fabric-tag">Embroidered | Chiffon</div>
-                    <div class="product-title">Floral Zari 3-Piece Luxury Suit</div>
-                    <div class="price-box">
-                        <span class="old-price">PKR 30,000</span>
-                        <span class="current-price">PKR 15,000</span>
-                    </div>
-                    <a href="https://wa.me/92301300233?text=Hi%20Baseer%20Collection,%20I%20want%20to%20buy:%20Floral%20Zari%203-Piece%20(PKR%2015,000)" target="_blank" class="btn-wa">
-                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- DRESS 3 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <div class="wishlist-icon"><i class="fa-regular fa-heart"></i></div>
-                    <!-- Put your image filename inside src="..." below -->
-                    <img src="https://images.unsplash.com/photo-1563178406-4cdc2923acbc?q=80&w=800" alt="Black Kurta">
-                </div>
-                <div class="product-info">
-                    <div class="fabric-tag">Printed | Cambric</div>
-                    <div class="product-title">Long Black Embroidered Kurta</div>
-                    <div class="price-box">
-                        <span class="current-price">PKR 6,500</span>
-                    </div>
-                    <a href="https://wa.me/92301300233?text=Hi%20Baseer%20Collection,%20I%20want%20to%20buy:%20Long%20Black%20Kurta%20(PKR%206,500)" target="_blank" class="btn-wa">
-                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <!-- Khaadi Style Bottom Service Strip -->
-    <div class="feature-strip">
-        <div class="feature-grid">
-            <div class="feature-item">
-                <i class="fa-solid fa-truck-fast"></i>
-                <h4>SHIPPING CHARGES</h4>
-                <p>Flat rate starting from Rs. 130</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-arrows-rotate"></i>
-                <h4>EASY RETURNS</h4>
-                <p>30-day hassle-free exchanges</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-headset"></i>
-                <h4>NEED HELP?</h4>
-                <p>Direct WhatsApp support 24/7</p>
-            </div>
+    <!-- EASY ADMIN PANEL TO ADD NEW CLOTHES -->
+    <div class="container">
+        <div class="admin-section">
+            <h3><i class="fa-solid fa-plus-circle"></i> Store Manager (Add New Clothes)</h3>
+            <p>Use this form to add new dress pictures, names, and rates instantly to your website!</p>
+            
+            <form class="admin-form" id="addDressForm">
+                <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Dress Title:</label>
+                    <input type="text" id="dressTitle" placeholder="e.g., Pink Lawn 3-Piece" required>
+                </div>
+                <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Fabric / Category:</label>
+                    <input type="text" id="dressFabric" placeholder="e.g., Printed | Cambric" required>
+                </div>
+                <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Selling Price (PKR):</label>
+                    <input type="text" id="dressPrice" placeholder="e.g., 5,200" required>
+                </div>
+                <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Select Photo from Phone/PC:</label>
+                    <input type="file" id="dressImageFile" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-add-product">Upload & Display Dress</button>
+            </form>
         </div>
     </div>
 
@@ -216,5 +143,49 @@
         <p>&copy; 2026 Baseer Ladies Collection. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript to Handle New Items -->
+    <script>
+        const form = document.getElementById('addDressForm');
+        const grid = document.getElementById('productGrid');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const title = document.getElementById('dressTitle').value;
+            const fabric = document.getElementById('dressFabric').value;
+            const price = document.getElementById('dressPrice').value;
+            const fileInput = document.getElementById('dressImageFile');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imageUrl = event.target.result;
+                    
+                    // Create new card element
+                    const newCard = document.createElement('div');
+                    newCard.className = 'product-card';
+                    newCard.innerHTML = `
+                        <div class="img-container">
+                            <img src="${imageUrl}" alt="${title}">
+                        </div>
+                        <div class="product-info">
+                            <div class="fabric-tag">${fabric}</div>
+                            <div class="product-title">${title}</div>
+                            <span class="current-price">PKR ${price}</span>
+                            <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20${encodeURIComponent(title)}%20(PKR%20${encodeURIComponent(price)})" target="_blank" class="btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                            </a>
+                        </div>
+                    `;
+
+                    grid.appendChild(newCard);
+                    form.reset();
+                    alert('New dress added successfully to your store view!');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
