@@ -3,139 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseer Ladies Collection</title>
+    <title>Baseer Ladies Collection | Exclusive Women's Fashion</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #fdfbfb; color: #2d3436; overflow-x: hidden; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { background-color: #fcfcfc; color: #222; }
 
-        /* Animated Header */
-        header { 
-            background: linear-gradient(135deg, #721c24, #b02a37); 
+        /* Announcement Bar */
+        .top-bar { background: #5c141c; color: #fff; text-align: center; padding: 8px; font-size: 0.85rem; letter-spacing: 1px; }
+
+        /* Navigation Bar */
+        nav { background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #5c141c; text-transform: uppercase; letter-spacing: 2px; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: #5c141c; }
+
+        /* Hero Banner */
+        .hero { 
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200') center/cover no-repeat; 
+            height: 70vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
             color: white; 
             text-align: center; 
-            padding: 3rem 1rem; 
-            animation: fadeInDown 1s ease-out;
+            padding: 0 1rem;
         }
-        header h1 { font-size: 2.8rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
-        header p { font-style: italic; opacity: 0.9; font-size: 1.1rem; }
+        .hero h2 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 300; }
+        .hero-btn { background: #fff; color: #5c141c; padding: 0.8rem 2rem; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
+        .hero-btn:hover { background: #5c141c; color: #fff; }
 
-        .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
-        h2.section-title { text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #721c24; position: relative; }
+        /* Main Container */
+        .container { max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #5c141c; text-transform: uppercase; letter-spacing: 2px; }
+        .section-header div { width: 60px; height: 3px; background: #5c141c; margin: 10px auto 0; }
 
-        /* Product Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        /* Products Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
 
-        /* Animated Hover Cards */
-        .card { 
-            background: white; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            box-shadow: 0 8px 15px rgba(0,0,0,0.08); 
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            animation: fadeInUp 1s ease-out;
-        }
-        .card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: 0 15px 25px rgba(114, 28, 36, 0.2); 
-        }
-
-        /* Image Zoom Animation */
-        .img-container { width: 100%; height: 320px; overflow: hidden; background: #eee; }
-        .card img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            transition: transform 0.5s ease; 
-        }
-        .card:hover img { transform: scale(1.08); }
+        /* Product Card */
+        .card { background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; transition: 0.4s ease; position: relative; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+        
+        .img-box { width: 100%; height: 380px; overflow: hidden; position: relative; background: #f4f4f4; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .card:hover .img-box img { transform: scale(1.08); }
 
         .card-details { padding: 1.5rem; text-align: center; }
-        .card-details h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #111; }
-        .price { font-size: 1.3rem; font-weight: bold; color: #b02a37; margin: 0.8rem 0; }
+        .category { font-size: 0.75rem; text-transform: uppercase; color: #888; letter-spacing: 1px; margin-bottom: 5px; }
+        .card-details h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; color: #111; }
+        .price { font-size: 1.2rem; font-weight: 700; color: #5c141c; margin-bottom: 1.2rem; }
 
-        /* Pulsing WhatsApp Button */
-        .btn-whatsapp { 
-            display: inline-block; 
-            background-color: #25D366; 
-            color: white; 
-            padding: 0.8rem 1.6rem; 
+        /* WhatsApp Button */
+        .btn-wa { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 8px; 
+            width: 100%; 
+            background: #25D366; 
+            color: #fff; 
+            padding: 0.8rem; 
             text-decoration: none; 
-            border-radius: 30px; 
-            font-weight: bold; 
-            transition: background 0.3s ease, transform 0.2s ease;
-            animation: pulse 2s infinite;
+            font-weight: 600; 
+            border-radius: 4px; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
-        .btn-whatsapp:hover { background-color: #1eb853; transform: scale(1.05); }
+        .btn-wa:hover { background: #1eb853; }
 
-        footer { text-align: center; padding: 2rem; background: #111; color: white; margin-top: 4rem; }
+        /* Footer */
+        footer { background: #111; color: #aaa; text-align: center; padding: 3rem 1rem; margin-top: 5rem; font-size: 0.9rem; }
+        footer h3 { font-family: 'Playfair Display', serif; color: #fff; margin-bottom: 1rem; letter-spacing: 2px; }
 
-        /* Keyframe Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Baseer Ladies Collection</h1>
-        <p>A shade for every story — everyday lawn to bridal finery</p>
-    </header>
+    <div class="top-bar">✨ FREE NATIONWIDE SHIPPING ON ORDERS OVER PKR 5,000 ✨</div>
 
-    <div class="container">
-        <h2 class="section-title">Featured Arrivals</h2>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Baseer Collection</div>
+        <ul class="nav-links">
+            <li><a href="#collection">New Arrivals</a></li>
+            <li><a href="#collection">Lawn Collection</a></li>
+            <li><a href="#collection">Party Wear</a></li>
+            <li><a href="#collection">Bridal</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Banner -->
+    <div class="hero">
+        <h2>NEW SUMMER ARRIVALS</h2>
+        <p>A shade for every story — lawn to bridal finery</p>
+        <a href="#collection" class="hero-btn">Explore Collection</a>
+    </div>
+
+    <!-- Collection Section -->
+    <div class="container" id="collection">
+        <div class="section-header">
+            <h2>Featured Collections</h2>
+            <div></div>
+        </div>
+
         <div class="grid">
 
-            <!-- PRODUCT 1 -->
+            <!-- DRESS 1 -->
             <div class="card">
-                <div class="img-container">
-                    <!-- Replace dress1.jpg with your exact image file name -->
-                    <img src="dress1.jpg" alt="3-Piece Lawn Suit">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800" alt="Printed Lawn Suit">
                 </div>
                 <div class="card-details">
-                    <h3>3-Piece Printed Lawn Suit</h3>
-                    <p>Premium digital printed summer fabric.</p>
-                    <div class="price">PKR 3,500</div>
-                    <!-- Replace 923001234567 with your WhatsApp number -->
-                    <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20the%20Printed%20Lawn%20Suit" class="btn-whatsapp">Order on WhatsApp</a>
+                    <div class="category">Unstitched • 3 Piece</div>
+                    <h3>Printed Floral Lawn Suit</h3>
+                    <div class="price">PKR 4,200</div>
+                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order%20the%20Printed%20Floral%20Lawn%20Suit%20(PKR%204,200)" target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- PRODUCT 2 -->
+            <!-- DRESS 2 -->
             <div class="card">
-                <div class="img-container">
-                    <!-- Replace dress2.jpg with your exact image file name -->
-                    <img src="dress2.jpg" alt="Embroidered Chiffon">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800" alt="Embroidered Chiffon">
                 </div>
                 <div class="card-details">
-                    <h3>Embroidered Chiffon Dress</h3>
-                    <p>Heavy sequence embroidery party wear.</p>
-                    <div class="price">PKR 6,800</div>
-                    <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20the%20Chiffon%20Dress" class="btn-whatsapp">Order on WhatsApp</a>
+                    <div class="category">Festive • Luxury</div>
+                    <h3>Embroidered Chiffon Suit</h3>
+                    <div class="price">PKR 7,900</div>
+                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order%20the%20Embroidered%20Chiffon%20Suit%20(PKR%207,900)" target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- PRODUCT 3 -->
+            <!-- DRESS 3 -->
             <div class="card">
-                <div class="img-container">
-                    <!-- Replace dress3.jpg with your exact image file name -->
-                    <img src="dress3.jpg" alt="Bridal Velvet Suit">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1563178406-4cdc2923acbc?q=80&w=800" alt="Velvet Velvet Suit">
                 </div>
                 <div class="card-details">
-                    <h3>Bridal Velvet Collection</h3>
-                    <p>Handcrafted velvet suit with rich dupatta.</p>
-                    <div class="price">PKR 12,500</div>
-                    <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20the%20Velvet%20Suit" class="btn-whatsapp">Order on WhatsApp</a>
+                    <div class="category">Bridal • Handcrafted</div>
+                    <h3>Royal Velvet Suit</h3>
+                    <div class="price">PKR 14,500</div>
+                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order%20the%20Royal%20Velvet%20Suit%20(PKR%2014,500)" target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                    </a>
                 </div>
             </div>
 
@@ -143,7 +171,9 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Baseer Ladies Collection. All rights reserved.</p>
+        <h3>BASEER LADIES COLLECTION</h3>
+        <p>Curated by Mr. Baseer Ahmed</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">&copy; 2026 Baseer Ladies Collection. All rights reserved.</p>
     </footer>
 
 </body>
