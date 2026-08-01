@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- CORE STYLES --- */
         :root {
-            --primary-color: #b84242; /* Khaadi Red/Rust Signature */
+            --primary-color: #b84242;
             --text-dark: #111111;
             --text-muted: #666666;
             --bg-light: #f9f9f9;
@@ -20,25 +19,10 @@
             --font-body: 'Montserrat', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--white); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
 
-        body {
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* --- ANNOUNCEMENT BAR --- */
         .announcement-bar {
             background-color: var(--primary-color);
             color: var(--white);
@@ -50,7 +34,6 @@
             text-transform: uppercase;
         }
 
-        /* --- NAVIGATION --- */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -72,28 +55,13 @@
             text-transform: uppercase;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
 
-        .nav-links a {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* --- HERO BANNER --- */
         .hero-banner {
             position: relative;
-            height: 60vh;
+            height: 50vh;
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -102,46 +70,13 @@
             color: var(--white);
         }
 
-        .hero-content h1 {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
+        .hero-content h1 { font-family: var(--font-heading); font-size: 3rem; font-weight: 700; letter-spacing: 3px; margin-bottom: 10px; text-transform: uppercase; }
+        .hero-content p { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; }
 
-        .hero-content p {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* --- PRODUCTS SECTION --- */
-        .main-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .section-subtitle {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            margin-top: 5px;
-        }
+        .main-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-title { font-family: var(--font-heading); font-size: 2.2rem; letter-spacing: 2px; text-transform: uppercase; }
+        .section-subtitle { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; margin-top: 5px; }
 
         .product-grid {
             display: grid;
@@ -157,63 +92,30 @@
             flex-direction: column;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
 
         .img-container {
             position: relative;
             width: 100%;
-            padding-top: 133%; /* 3:4 Aspect Ratio */
+            padding-top: 133%;
             overflow: hidden;
             background-color: #f5f5f5;
         }
 
         .img-container img {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
 
-        .product-card:hover .img-container img {
-            transform: scale(1.05);
-        }
+        .product-card:hover .img-container img { transform: scale(1.05); }
 
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .fabric-tag {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .product-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-            height: 2.6em;
-            overflow: hidden;
-        }
-
-        .current-price {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
+        .product-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .fabric-tag { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .product-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 10px; color: var(--text-dark); height: 2.6em; overflow: hidden; }
+        .current-price { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); margin-bottom: 15px; }
 
         .btn-wa {
             display: block;
@@ -232,48 +134,23 @@
             margin-top: auto;
         }
 
-        .btn-wa:hover {
-            background-color: var(--primary-color);
-        }
+        .btn-wa:hover { background-color: var(--primary-color); }
 
-        /* --- FOOTER --- */
-        footer {
-            background-color: #111111;
-            color: var(--white);
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
+        footer { background-color: #111111; color: var(--white); padding: 40px 20px; text-align: center; margin-top: 60px; }
+        footer h2 { font-family: var(--font-heading); letter-spacing: 2px; font-size: 1.5rem; margin-bottom: 10px; color: var(--primary-color); }
+        footer p { font-size: 0.8rem; color: #888888; }
 
-        footer h2 {
-            font-family: var(--font-heading);
-            letter-spacing: 2px;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        footer p {
-            font-size: 0.8rem;
-            color: #888888;
-        }
-
-        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero-content h1 { font-size: 2.2rem; }
-            .hero-banner { height: 45vh; }
+            .hero-banner { height: 40vh; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        Free Nationwide Shipping on Orders Over PKR 5,000
-    </div>
+    <div class="announcement-bar">Free Nationwide Shipping on Orders Over PKR 5,000</div>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="#" class="brand-logo">Baseer Collection</a>
         <ul class="nav-links">
@@ -283,7 +160,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Banner -->
     <header class="hero-banner">
         <div class="hero-content">
             <h1>New Arrivals</h1>
@@ -291,66 +167,107 @@
         </div>
     </header>
 
-    <!-- Products Showcase -->
     <main class="main-container">
         <div class="section-header">
             <h2 class="section-title">Top Picks For You</h2>
             <p class="section-subtitle">Handpicked styles curated by Mr. Baseer Ahmed</p>
         </div>
 
-        <div class="product-grid">
-            <!-- PRODUCT DRESS CARD 1 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="images.jpg" alt="Floral Printed Lawn Suit">
-                </div>
-                <div class="product-info">
-                    <div class="fabric-tag">Embroidered | Lawn 3-Piece</div>
-                    <div class="product-title">Floral Printed Lawn Suit</div>
-                    <span class="current-price">PKR 4,500</span>
-                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Floral%20Printed%20Lawn%20Suit%20(PKR%204,500)" target="_blank" class="btn-wa">
-                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- PRODUCT DRESS CARD 2 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="images (1).jpg" alt="Summer Lawn Printed Suit">
-                </div>
-                <div class="product-info">
-                    <div class="fabric-tag">Printed | Lawn 3-Piece</div>
-                    <div class="product-title">Summer Lawn Printed Suit</div>
-                    <span class="current-price">PKR 3,800</span>
-                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Summer%20Lawn%20Printed%20Suit%20(PKR%203,800)" target="_blank" class="btn-wa">
-                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- PRODUCT DRESS CARD 3 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="images (2).jpg" alt="Designer Embroidered Lawn">
-                </div>
-                <div class="product-info">
-                    <div class="fabric-tag">Luxury Collection | Chiffon Dupatta</div>
-                    <div class="product-title">Designer Embroidered Lawn</div>
-                    <span class="current-price">PKR 5,200</span>
-                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Designer%20Embroidered%20Lawn%20(PKR%205,200)" target="_blank" class="btn-wa">
-                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
-                    </a>
-                </div>
-            </div>
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be loaded dynamically from Admin CMS here -->
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <h2>BASEER LADIES COLLECTION</h2>
         <p>&copy; 2026 Baseer Collection. All Rights Reserved.</p>
     </footer>
 
+    <!-- DYNAMIC CMS PRODUCT LOADER -->
+    <script>
+        const repoOwner = 'asrzvoice-cloud45';
+        const repoName = 'Baseer-Ladies_Collection';
+        const productGrid = document.getElementById('productGrid');
+
+        async function fetchProducts() {
+            try {
+                // Fetch list of files in content/products
+                const res = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/content/products`);
+                if (!res.ok) {
+                    showDefaultProducts();
+                    return;
+                }
+                const files = await res.json();
+                productGrid.innerHTML = ''; // Clear container
+
+                for (let file of files) {
+                    if (file.name.endsWith('.md')) {
+                        const fileRes = await fetch(file.download_url);
+                        const text = await fileRes.text();
+                        parseAndRenderProduct(text);
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                showDefaultProducts();
+            }
+        }
+
+        function parseAndRenderProduct(mdText) {
+            // Read YAML Frontmatter fields
+            const titleMatch = mdText.match(/title:\s*"(.*?)"|title:\s*(.*)/);
+            const fabricMatch = mdText.match(/fabric:\s*"(.*?)"|fabric:\s*(.*)/);
+            const priceMatch = mdText.match(/price:\s*"(.*?)"|price:\s*(.*)/);
+            const imageMatch = mdText.match(/image:\s*"(.*?)"|image:\s*(.*)/);
+
+            const title = titleMatch ? (titleMatch[1] || titleMatch[2]) : 'Unstitched Dress';
+            const fabric = fabricMatch ? (fabricMatch[1] || fabricMatch[2]) : 'Lawn Collection';
+            const price = priceMatch ? (priceMatch[1] || priceMatch[2]) : '0';
+            const image = imageMatch ? (imageMatch[1] || imageMatch[2]) : 'images.jpg';
+
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="img-container">
+                    <img src="${image.trim()}" alt="${title}">
+                </div>
+                <div class="product-info">
+                    <div class="fabric-tag">${fabric.trim()}</div>
+                    <div class="product-title">${title.trim()}</div>
+                    <span class="current-price">PKR ${price.trim()}</span>
+                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20${encodeURIComponent(title)}%20(PKR%20${encodeURIComponent(price)})" target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            `;
+            productGrid.appendChild(card);
+        }
+
+        function showDefaultProducts() {
+            // Backup static products in case no CMS items are created yet
+            productGrid.innerHTML = `
+                <div class="product-card">
+                    <div class="img-container"><img src="images.jpg" alt="Floral Printed Lawn Suit"></div>
+                    <div class="product-info">
+                        <div class="fabric-tag">Embroidered | Lawn 3-Piece</div>
+                        <div class="product-title">Floral Printed Lawn Suit</div>
+                        <span class="current-price">PKR 4,500</span>
+                        <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Floral%20Printed%20Lawn%20Suit" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-container"><img src="images (1).jpg" alt="Summer Lawn Printed Suit"></div>
+                    <div class="product-info">
+                        <div class="fabric-tag">Printed | Lawn 3-Piece</div>
+                        <div class="product-title">Summer Lawn Printed Suit</div>
+                        <span class="current-price">PKR 3,800</span>
+                        <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Summer%20Lawn%20Printed%20Suit" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        fetchProducts();
+    </script>
 </body>
 </html>
