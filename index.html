@@ -3,100 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseer Ladies Collection | New Arrivals & Sale</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Baseer Collection - Luxury Women's Apparel</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background-color: #fff; color: #111; overflow-x: hidden; }
+        /* --- CORE STYLES --- */
+        :root {
+            --primary-color: #b84242; /* Khaadi Red/Rust Signature */
+            --text-dark: #111111;
+            --text-muted: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
 
-        /* Announcement Bar */
-        .top-bar { background: #ba4343; color: #fff; text-align: center; padding: 9px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* Navigation Header */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4%; border-bottom: 1px solid #f0f0f0; background: #fff; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.8rem; font-weight: 700; color: #ba4343; letter-spacing: 1.5px; text-transform: uppercase; }
-        .nav-menu { list-style: none; display: flex; gap: 2.2rem; }
-        .nav-menu a { text-decoration: none; color: #222; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
 
-        /* Hero Banner */
-        .hero-banner { width: 100%; height: 60vh; position: relative; overflow: hidden; background: #f8f8f8; }
-        .hero-banner img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 1rem; }
-        .hero-overlay h1 { font-size: 3rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-        /* Section Container */
-        .container { max-width: 1400px; margin: 4rem auto; padding: 0 2rem; }
-        .section-title { text-align: center; margin-bottom: 2.5rem; }
-        .section-title h2 { font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        /* --- ANNOUNCEMENT BAR --- */
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-        /* Grid Layout */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-        /* Product Cards */
-        .product-card { background: #fff; overflow: hidden; position: relative; transition: all 0.3s ease; border: 1px solid #eee; }
-        .img-container { width: 100%; height: 400px; overflow: hidden; position: relative; background: #f5f5f5; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .product-card:hover .img-container img { transform: scale(1.08); }
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
 
-        .product-info { padding: 1.2rem; }
-        .fabric-tag { font-size: 0.75rem; color: #777; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-        .product-title { font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 8px; }
-        .current-price { font-size: 1.1rem; font-weight: 700; color: #ba4343; margin-bottom: 1rem; display: block; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-        /* WhatsApp Order Button */
-        .btn-wa { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #111; color: #fff; padding: 0.85rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s ease; }
-        .btn-wa:hover { background: #25D366; }
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-        /* ADMIN CONTROL PANEL STYLES */
-        .admin-section { background: #f4f4f4; border: 2px dashed #ba4343; padding: 2.5rem; border-radius: 8px; margin: 4rem auto; max-width: 800px; }
-        .admin-section h3 { font-size: 1.4rem; color: #ba4343; margin-bottom: 0.5rem; text-align: center; text-transform: uppercase; }
-        .admin-section p { text-align: center; font-size: 0.85rem; color: #555; margin-bottom: 1.5rem; }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-        .admin-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .admin-form input, .admin-form select { padding: 0.8rem; border: 1px solid #ccc; font-size: 0.9rem; border-radius: 4px; width: 100%; }
-        .admin-form .full-width { grid-column: span 2; }
+        /* --- HERO BANNER --- */
+        .hero-banner {
+            position: relative;
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
 
-        .btn-add-product { grid-column: span 2; background: #ba4343; color: white; padding: 1rem; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px; transition: 0.3s; }
-        .btn-add-product:hover { background: #111; }
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-        footer { background: #111; color: #fff; padding: 3rem 1rem; text-align: center; font-size: 0.85rem; }
+        .hero-content p {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- PRODUCTS SECTION --- */
+        .main-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .img-container {
+            position: relative;
+            width: 100%;
+            padding-top: 133%; /* 3:4 Aspect Ratio */
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .img-container img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .fabric-tag {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            height: 2.6em;
+            overflow: hidden;
+        }
+
+        .current-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .btn-wa {
+            display: block;
+            width: 100%;
+            background-color: #111111;
+            color: var(--white);
+            text-align: center;
+            padding: 12px 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-wa:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111111;
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer h2 {
+            font-family: var(--font-heading);
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: #888888;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-banner { height: 45vh; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">FREE NATIONWIDE SHIPPING ON ORDERS OVER PKR 5,000</div>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        Free Nationwide Shipping on Orders Over PKR 5,000
+    </div>
 
-    <nav>
-        <div class="logo">Baseer Collection</div>
-        <ul class="nav-menu">
-            <li><a href="#shop">SALE</a></li>
-            <li><a href="#shop">NEW IN</a></li>
-            <li><a href="#shop">READY TO WEAR</a></li>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="brand-logo">Baseer Collection</a>
+        <ul class="nav-links">
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">New In</a></li>
+            <li><a href="#">Ready to Wear</a></li>
         </ul>
     </nav>
 
-    <div class="hero-banner">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1400" alt="Banner">
-        <div class="hero-overlay">
-            <h1>NEW ARRIVALS</h1>
+    <!-- Hero Banner -->
+    <header class="hero-banner">
+        <div class="hero-content">
+            <h1>New Arrivals</h1>
             <p>Shop Exclusive Women's Clothing</p>
         </div>
-    </div>
+    </header>
 
-    <!-- Product Showcase -->
-    <div class="container" id="shop">
-        <div class="section-title">
-            <h2>Top Picks For You</h2>
-            <p>Handpicked styles curated by Mr. Baseer Ahmed</p>
+    <!-- Products Showcase -->
+    <main class="main-container">
+        <div class="section-header">
+            <h2 class="section-title">Top Picks For You</h2>
+            <p class="section-subtitle">Handpicked styles curated by Mr. Baseer Ahmed</p>
         </div>
 
-        <div class="product-grid" id="productGrid">
-            <!-- Sample Dress 1 -->
+        <div class="product-grid">
+            <!-- PRODUCT DRESS CARD 1 -->
             <div class="product-card">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800" alt="Suit">
+                    <img src="images.jpg" alt="Floral Printed Lawn Suit">
                 </div>
                 <div class="product-info">
                     <div class="fabric-tag">Embroidered | Lawn 3-Piece</div>
@@ -107,85 +313,44 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- EASY ADMIN PANEL TO ADD NEW CLOTHES -->
-    <div class="container">
-        <div class="admin-section">
-            <h3><i class="fa-solid fa-plus-circle"></i> Store Manager (Add New Clothes)</h3>
-            <p>Use this form to add new dress pictures, names, and rates instantly to your website!</p>
-            
-            <form class="admin-form" id="addDressForm">
-                <div>
-                    <label style="font-size:0.8rem; font-weight:600;">Dress Title:</label>
-                    <input type="text" id="dressTitle" placeholder="e.g., Pink Lawn 3-Piece" required>
+            <!-- PRODUCT DRESS CARD 2 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images (1).jpg" alt="Summer Lawn Printed Suit">
                 </div>
-                <div>
-                    <label style="font-size:0.8rem; font-weight:600;">Fabric / Category:</label>
-                    <input type="text" id="dressFabric" placeholder="e.g., Printed | Cambric" required>
+                <div class="product-info">
+                    <div class="fabric-tag">Printed | Lawn 3-Piece</div>
+                    <div class="product-title">Summer Lawn Printed Suit</div>
+                    <span class="current-price">PKR 3,800</span>
+                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Summer%20Lawn%20Printed%20Suit%20(PKR%203,800)" target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                    </a>
                 </div>
-                <div>
-                    <label style="font-size:0.8rem; font-weight:600;">Selling Price (PKR):</label>
-                    <input type="text" id="dressPrice" placeholder="e.g., 5,200" required>
-                </div>
-                <div>
-                    <label style="font-size:0.8rem; font-weight:600;">Select Photo from Phone/PC:</label>
-                    <input type="file" id="dressImageFile" accept="image/*" required>
-                </div>
-                <button type="submit" class="btn-add-product">Upload & Display Dress</button>
-            </form>
-        </div>
-    </div>
+            </div>
 
+            <!-- PRODUCT DRESS CARD 3 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images (2).jpg" alt="Designer Embroidered Lawn">
+                </div>
+                <div class="product-info">
+                    <div class="fabric-tag">Luxury Collection | Chiffon Dupatta</div>
+                    <div class="product-title">Designer Embroidered Lawn</div>
+                    <span class="current-price">PKR 5,200</span>
+                    <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20Designer%20Embroidered%20Lawn%20(PKR%205,200)" target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <h3>BASEER LADIES COLLECTION</h3>
-        <p>&copy; 2026 Baseer Ladies Collection. All rights reserved.</p>
+        <h2>BASEER LADIES COLLECTION</h2>
+        <p>&copy; 2026 Baseer Collection. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript to Handle New Items -->
-    <script>
-        const form = document.getElementById('addDressForm');
-        const grid = document.getElementById('productGrid');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const title = document.getElementById('dressTitle').value;
-            const fabric = document.getElementById('dressFabric').value;
-            const price = document.getElementById('dressPrice').value;
-            const fileInput = document.getElementById('dressImageFile');
-            const file = fileInput.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const imageUrl = event.target.result;
-                    
-                    // Create new card element
-                    const newCard = document.createElement('div');
-                    newCard.className = 'product-card';
-                    newCard.innerHTML = `
-                        <div class="img-container">
-                            <img src="${imageUrl}" alt="${title}">
-                        </div>
-                        <div class="product-info">
-                            <div class="fabric-tag">${fabric}</div>
-                            <div class="product-title">${title}</div>
-                            <span class="current-price">PKR ${price}</span>
-                            <a href="https://wa.me/92301300233?text=Hi!%20I%20want%20to%20order:%20${encodeURIComponent(title)}%20(PKR%20${encodeURIComponent(price)})" target="_blank" class="btn-wa">
-                                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
-                            </a>
-                        </div>
-                    `;
-
-                    grid.appendChild(newCard);
-                    form.reset();
-                    alert('New dress added successfully to your store view!');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
 </body>
 </html>
